@@ -30,7 +30,7 @@
 							<a class="nav-link active" aria-current="page" href="new_perso.php">nouveau personnage</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="mesperso.php">mes Pers</a>
+							<a class="nav-link active" aria-current="page" href="mesPerso.php">mes Pers</a>
 						</li>
 					</ul>
 	<?php
