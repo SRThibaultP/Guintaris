@@ -34,7 +34,7 @@ $idclasse = $lignePerso['classe_personnage'];
     <h3>niveau <?php echo $lignePerso['niveau']?></h3>
 
 <?php
-$req = mysqli_query($link, 'select libelle from RACE where id = "'.$idrace.'"');
+$req = mysqli_query($link, 'select libelle from race where id = "'.$idrace.'"');
 $ligne = mysqli_fetch_array($req);
 $race = $ligne['libelle'];
 $req = mysqli_query($link, 'select libelle from classe where id = "'.$idclasse.'"');
