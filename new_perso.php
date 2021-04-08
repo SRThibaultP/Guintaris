@@ -6,7 +6,8 @@ if(isset($_POST['nom'])&& $_POST['nom'] != ""){
     $nom = addslashes($_POST['nom']);
     if ($_POST['niveau'] != ""|| $_POST['pv'] != ""|| $_POST['pm'] != ""|| $_POST['pc'] != ""){
         if ( $_POST['constitution'] != ""|| $_POST['force'] != ""|| $_POST['dexterite'] != ""|| $_POST['foi'] != ""|| $_POST['intelligence'] != ""||  $_POST['charisme']!= ""){
-            $req = mysqli_query($link, 'select id from RACE where libelle = "'.$_POST['race'].'"');
+            var_dump($_POST);
+            $req = mysqli_query($link, 'select id from race where libelle = "'.$_POST['race'].'"');
             $ligne = mysqli_fetch_array($req);
             $race = $ligne['id'];
             $req = mysqli_query($link, 'select id from classe where libelle = "'.$_POST['classe'].'"');
