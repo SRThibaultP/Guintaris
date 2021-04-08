@@ -18,6 +18,7 @@ $id = $_GET['idperso'];
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
 <a href="index.php">acceuil</a>
@@ -69,13 +70,28 @@ $classe = $ligne['libelle'];
     AND P.typ_armure = A.typ
     AND P.loca_armure = A.localitastion
     AND	P.perso = "'.$_SESSION['persoID'].'"
-    ORDER BY  T.`type`, L.libelle ASC;');
+    ORDER BY L.id ASC;');
     $ca = 0;
+    echo '4
+    <div class="col">';
+    echo '<table>
+    <tr>
+        <th>pièce</th>
+        <th>type</th>
+        <th>CA</th>
+    </tr>';
     while($ligne = mysqli_fetch_array($req)){
         $ca = $ca + $ligne['niveau'];
-        echo '<p>'.$ligne['loca'].', '.$ligne['types'].', '.$ligne['niveau'].', effet : '.$ligne['effet'].'</p> <br/>';
+        echo '<tr>
+            <th>'.$ligne['loca'].'</th>
+            <th>'.$ligne['types'].'</th>
+            <th>'.$ligne['niveau'].'</th>
+            <th> '.$ligne['effet'].'</th>
+        </tr>';
         }
-    echo '<p>Classe d\'armure'.$ca.'</p>';
+    echo 'Classe d\'armure'.$ca.'</table>
+    </div>
+    ';
 
     $req = mysqli_query($link, 'SELECT numero, nom, degat, de 
     FROM arme, arme_joueur
